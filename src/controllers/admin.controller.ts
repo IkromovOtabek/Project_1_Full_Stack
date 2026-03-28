@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import { T } from "../libs/types/common";
 import UserService from "../models/User.service";
 import { AdminRequest, LoginInput, UserInput } from "../libs/types/user";
@@ -102,6 +102,22 @@ adminController.checkAuthSesson = async (req: AdminRequest, res: Response) => {
   } catch (err) {
     console.log("Error checkAuthSesson", err);
     res.send(err);
+  }
+};
+
+adminController.verifyAdmin = (
+  req: AdminRequest,
+  res: Response,
+  next: NextFunction,
+) => {
+  if (req.session?.user?.userType === UserType.ADMIN) {
+    req.user = req.session.user;
+    next();
+  } else {
+    const message = Message.NOT_AUTHENTICATED;
+    res.send(
+      `<script>alert('${message}'); window.location.replace('/admin/login'); </script>`,
+    );
   }
 };
 

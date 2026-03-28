@@ -39,7 +39,7 @@ app.use(
 app.use(function (req, res, next) {
   // Middleware har bir so'rovda ishlaydi
   const sessionInstance = req.session as T; // TypeScript uchun
-  res.locals.member = sessionInstance.member; // Views ga member ni ulash
+  res.locals.user = sessionInstance.user; // Views ga user ni ulash
   next(); // next ni chaqirmasak keyingi middleware yoki controller ga o'tmaydi
 });
 
