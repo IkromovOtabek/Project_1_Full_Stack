@@ -11,11 +11,11 @@ routerAdmin
 routerAdmin
   .get("/signup", adminController.getSignup)
   .post("/signup", adminController.processSignup);
+routerAdmin.get("/logout", adminController.logout);
 
+routerAdmin.get("/check-me", adminController.checkAuthSesson);
 /** PRODUCT **/
 
-
 /** USER **/
-
 
 export default routerAdmin;

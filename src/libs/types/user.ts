@@ -1,5 +1,7 @@
 import { ObjectId } from "mongoose";
 import { UserStatus, UserType } from "../enums/user.enum";
+import { Request } from "express";
+import { Session } from "express-session";
 
 //Databsega Yuboriladgan malumotlar shu ko'rinishda boradi
 export interface User {
@@ -32,4 +34,9 @@ export interface UserInput {
 export interface LoginInput {
   userNick: string;
   userPassword: string;
+}
+
+export interface AdminRequest extends Request {
+  member: User;
+  session: Session & { user: User };
 }
