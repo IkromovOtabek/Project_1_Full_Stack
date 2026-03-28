@@ -10,15 +10,24 @@ export enum HttpCode {
 }
 
 export enum Message {
-  SOMETHING_WNET_WRONG = "Something went wrong!",
+  SOMETHING_WENT_WRONG = "Something went wrong!",
   NO_DATA_FOUND = "No data is found!",
   CREATED_FAILED = "Created is failed!",
   UPDATE_FAILED = "Update is failed!!",
+
+  USED_NICK_PHONE = "You are inserting already used nick or phone!",
+  NO_USER_NICK = "No user with that user Nick!",
+  WRONG_PASSWORD = "Wrong password, please try again!",
 }
 
 class Errors extends Error {
   public code: HttpCode;
   public message: Message;
+
+  static stadanrd = {
+    code: HttpCode.INTERNAL_SERVER_ERROR,
+    message: Message.SOMETHING_WENT_WRONG
+  }
 
   constructor(statusCode: HttpCode, statusMessage: Message) {
     super();
