@@ -3,13 +3,6 @@ export enum ProductCondission{
     NEW = "NEW"
 }
 
-export enum ProductVolume{
-    ONE = 128,
-    TWO = 256,
-    THREE = 512,
-    FOUR = 1,
-}
-
 export enum ProductStatus{
     PAUSE = "PAUSE",
     PROCCESS = "PROCCESS",

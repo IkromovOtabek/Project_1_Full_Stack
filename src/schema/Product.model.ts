@@ -3,7 +3,6 @@ import {
   ProductCollection,
   ProductCondission,
   ProductStatus,
-  ProductVolume,
 } from "../libs/enums/product.enum";
 // memberschemani 2 xil usulda qursa buladi 1-Schema first va Code first orqali quriladi bu qurganimiz schama based
 const productSchema = new Schema(
@@ -35,11 +34,6 @@ const productSchema = new Schema(
       type: Number,
       required: true,
     },
-    productVolume: {
-      type: Number,
-      enum: ProductVolume,
-      default: ProductVolume.ONE,
-    },
     productDesc: {
       type: String,
     },
@@ -55,7 +49,7 @@ const productSchema = new Schema(
   { timestamps: true }, // updatedAt, createdAt bu bizda updatedAt va createdAt qachon hosil bulganini quyib beradi
 );
 productSchema.index(
-  { productName: 1, productCondission: 1, productVolume: 1 },
+  { productImages: 1, productDesc: 1 },
   { unique: true },
 );
 

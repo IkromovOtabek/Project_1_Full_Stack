@@ -1,4 +1,7 @@
-import ProductModel from "src/schema/Product.model";
+import { Product, ProductInput, ProductUpdateInput } from "../libs/types/product";
+import Errors, { HttpCode, Message } from "../libs/Errors";
+import ProductModel from "../schema/Product.model";
+import { shapeIntoMongooseObjectId } from "../libs/types/config";
 
 class ProductService {
   private readonly productModel;
@@ -6,5 +9,37 @@ class ProductService {
   constructor() {
     this.productModel = ProductModel;
   }
+
+  /** SPA **/
+
+
+  /** SSR **/
+
+  public async createNewProduct(input: ProductInput): Promise<Product> {
+    try {
+      return await this.productModel.create(input);
+    } catch (err) {
+      console.log("Error, model:CreateNewPruduct", err);
+      throw new Errors(HttpCode.BAD_REQUEST, Message.CREATED_FAILED);
+    }
+  }
+
+  public async updateChosenProduct(
+    id: string,
+    input: ProductUpdateInput,
+  ): Promise<Product> {
+    // string => ObjectId qilishimisz kerak
+    id = shapeIntoMongooseObjectId(id);
+
+    const result = await this.productModel
+      .findOneAndUpdate({ _id: id }, input, { new: true })
+      .exec();
+
+    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+    return result;
+  }
+
 }
 export default ProductService;
+

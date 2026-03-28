@@ -36,7 +36,9 @@ export interface LoginInput {
   userPassword: string;
 }
 
-export interface AdminRequest extends Request {
-  user: User;
-  session: Session & { user: User };
+export interface AdminRequest extends Request{
+    user: User;
+    session: Session & { user: User }; // sessiyada member ma'lumotlari mavjud
+    file: Express.Multer.File; // bitta fayl
+    files: Express.Multer.File[]; // bir nechta fayl
 }

@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import UserService from "../models/User.service";
 import { AdminRequest, LoginInput, UserInput } from "../libs/types/user";
 import { UserType } from "../libs/enums/user.enum";
-import { Message } from "../libs/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 
 const userService = new UserService();
 
@@ -42,14 +42,18 @@ adminController.getLogin = (req: Request, res: Response) => {
 adminController.processSignup = async (req: AdminRequest, res: Response) => {
   try {
     console.log("getSignup");
-
+    const file = req.file;
+    if(!file)
+      throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
+    
     const newUser: UserInput = req.body;
+    newUser.userImage = file?.path.replace(/\\/g, "/");
     newUser.userType = UserType.ADMIN;
     const result = await userService.processSignup(newUser);
 
     req.session.user = result;
     req.session.save(function () {
-      res.send(result);
+      res.redirect("/admin/product/all");
     });
   } catch (err) {
     console.log("Error SignUp", err);
@@ -69,7 +73,7 @@ adminController.processLogin = async (req: AdminRequest, res: Response) => {
 
     req.session.user = result;
     req.session.save(function () {
-      res.send(result);
+      res.redirect("/admin/product/all");
     });
   } catch (err) {
     console.log("Error proccessLogin", err);
