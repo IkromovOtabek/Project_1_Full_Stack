@@ -1,0 +1,162 @@
+:root {
+  --neon-blue: #00f2fe;
+  --neon-purple: #7000ff;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  background-color: #020617;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.login-page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #111827 0%, #020617 100%);
+}
+
+.login-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  width: 90%;
+  max-width: 1200px;
+  z-index: 10;
+  perspective: 2000px;
+}
+
+/* 3D Sfera dizayni */
+.scene-3d {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.sphere-svg {
+  width: 450px;
+  height: 450px;
+  filter: drop-shadow(0 0 15px var(--neon-blue));
+}
+
+.sphere-svg path {
+  fill: none;
+  stroke: url(#loginGrad);
+  stroke-width: 1.2px;
+  opacity: 0.6;
+}
+
+/* Glassmorphism Login Card */
+.glass-login-container {
+  flex: 0.8;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  padding: 50px 40px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.cyber-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #fff, var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+
+.nav-links span, .nav-links p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 5px 0;
+}
+
+.neon-link {
+  color: var(--neon-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.neon-link:hover {
+  text-shadow: 0 0 8px var(--neon-blue);
+}
+
+/* Inputlar */
+.login-input-frame {
+  margin-top: 30px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #cbd5e1;
+}
+
+.input-box input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 18px;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Button */
+.cyber-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.cyber-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 242, 254, 0.3);
+}
+
+/* Fon Bloblari */
+.shape-blob {
+  position: fixed;
+  width: 500px; height: 500px;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+}
+.one { top: -10%; left: -10%; background: var(--neon-purple); }
+.two { bottom: -10%; right: -10%; background: var(--neon-blue); }

@@ -1,9 +1,76 @@
-<%- include("includes/header") %>
+<%- include('includes/header') %>
 
-    <body>
-        <div>LOGIN PAGE</div>
-    </body>
+<link rel="stylesheet" type="text/css" href="/css/login.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js"></script>
 
-    </html>
+<body>
+  <div class="login-page-wrapper">
+    <!-- Fon elementlari (Bloblar) -->
+    <div class="blob-c">
+      <div class="shape-blob one"></div>
+      <div class="shape-blob two"></div>
+    </div>
 
-<%- include("includes/footer") %>
+    <div class="login-content">
+      <!-- Chap tomondagi 3D Sfera -->
+      <div class="scene-3d">
+        <div class="sphere-wrapper">
+          <svg class="sphere-svg" viewBox="0 0 440 440">
+            <defs>
+              <linearGradient id="loginGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f2fe" />
+                <stop offset="100%" stop-color="#4facfe" />
+              </linearGradient>
+            </defs>
+            <g class="paths-group">
+                <!-- Sfera pathlari (Home page bilan bir xil) -->
+                <path d="M361.604 361.238c-24.407 24.408-51.119 37.27-59.662 28.727-8.542-8.543 4.319-35.255 28.726-59.663 24.408-24.407 51.12-37.269 59.663-28.726 8.542 8.543-4.319 35.255-28.727 59.662z"/>
+                <!-- ... barcha pathlarni kiritishni unutmang ... -->
+                <path d="M109.698 109.332c-24.408 24.407-51.12 37.268-59.663 28.726-8.542-8.543 4.319-35.255 28.727-59.662 24.407-24.408 51.12-37.27 59.662-28.727 8.543 8.543-4.319 35.255-28.726 59.663z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- O'ng tomondagi Glassmorphism Login Card -->
+      <form class="glass-login-container" action="/admin/login" method="POST">
+        <div class="login-frame">
+          <div class="login-top">
+            <h2 class="cyber-title">Tizimga kirish</h2>
+            <div class="nav-links">
+              <span>Bosh sahifa <a href="/admin" class="neon-link">Home</a></span>
+              <p>Profilingiz yo'qmi? <a href="/admin/signup" class="neon-link">Signup</a></p>
+            </div>
+          </div>
+
+          <div class="login-input-frame">
+            <div class="input-box">
+              <label>Admin nomi *</label>
+              <input
+                type="text"
+                name="userNick"
+                placeholder="Username"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <label>Parol *</label>
+              <input
+                type="password"
+                name="userPassword"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+
+          <button class="cyber-button" name="login" type="submit">LOGIN</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/js/login.js"></script>
+</body>
+<%- include('includes/footer') %>

@@ -1,0 +1,338 @@
+:root {
+  --neon-blue: #3b82f6;
+  --neon-purple: #a855f7;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  background-color: #020617;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+.products-page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #111827 0%, #020617 100%);
+  padding-bottom: 80px;
+}
+
+/* Navigatsiya */
+.glass-nav {
+  margin: 20px auto;
+  width: fit-content;
+  padding: 10px 40px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+  z-index: 1000;
+  position: relative;
+}
+
+.nav-link {
+  color: #cbd5e1 !important;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-link.active {
+  color: var(--neon-blue) !important;
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.user-info-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding: 0 15px;
+  border-left: 1px solid var(--glass-border);
+}
+.nav-user-name {
+  color: var(--neon-purple);
+  font-weight: 600;
+  font-family: "Orbitron";
+  font-size: 0.9rem;
+}
+
+/* 3D Background (Faqat fonda harakatlanadi) */
+.scene-3d {
+  position: fixed;
+  left: 2%;
+  top: 15%;
+  width: 600px;
+  height: 600px;
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none; /* Sichqonchaga xalaqit bermaydi */
+}
+.sphere-svg path {
+  fill: none;
+  stroke: url(#prodGrad);
+  stroke-width: 1px;
+}
+
+/* Content Frame */
+.main-content-3d {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+/* KARTA RAZMERI KENGAYTIRILDI */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  padding: 45px;
+  width: 95%; /* Kengroq */
+  max-width: 1400px; /* Maksimal kenglik */
+  margin-top: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  /* Tilt olib tashlandi */
+  transform: none !important;
+}
+
+.header-name {
+  display: block;
+  font-family: "Orbitron";
+  font-size: 2.2rem;
+  text-align: center;
+  background: linear-gradient(to right, #fff, var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 35px;
+}
+
+/* Table Styling */
+.cyber-table {
+  width: 100%;
+  color: white !important;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+.cyber-table thead th {
+  border: none;
+  color: var(--neon-blue);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+.cyber-table tbody tr {
+  background: rgba(255, 255, 255, 0.03);
+  transition: 0.2s;
+}
+.cyber-table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+.cyber-table td {
+  padding: 18px !important;
+  border: none;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+.price-tag {
+  color: #00ff88;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Form Grid */
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+} /* 3 ta ustun */
+.input-group label {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #94a3b8;
+  display: block;
+}
+
+.cyber-input,
+.cyber-textarea,
+.spec-select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 15px;
+  color: white;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+}
+.cyber-textarea {
+  height: 120px;
+  grid-column: span 3;
+}
+
+/* Image Boxes */
+.media-row {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.upload-box {
+  position: relative; /* Ichidagi inputni unga nisbatan joylashtirish uchun */
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* INPUTNI YASHIRISH VA BUTUN QUTI USTIGA YOYISH */
+.image-input {
+  position: absolute; /* Quti ichida mustaqil */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Butunlay shaffof (yozuvlar ko'rinmaydi) */
+  cursor: pointer; /* Bosganda qo'l belgisi chiqadi */
+  z-index: 10; /* Hammasidan ustida turadi */
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rasm quti ichiga ideal joylashadi */
+  z-index: 1;
+}
+
+.box-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 5;
+}
+
+.upload-box:hover .box-overlay {
+  opacity: 1;
+}
+/* Buttons */
+.neon-btn {
+  border: none;
+  padding: 15px 40px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Poppins";
+  font-size: 1rem;
+}
+.neon-btn.blue {
+  background: var(--neon-blue);
+  color: white;
+}
+.neon-btn.purple {
+  background: var(--neon-purple);
+  color: white;
+  margin-left: 50px;
+}
+.neon-btn.red {
+  background: #ef4444;
+  color: white;
+}
+.neon-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Blobs */
+.shape-blob {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: -1;
+}
+.one {
+  top: -10%;
+  left: -5%;
+  background: var(--neon-purple);
+}
+.two {
+  bottom: -10%;
+  right: -5%;
+  background: var(--neon-blue);
+}
+/* Description Ustuni dizayni */
+.desc-cell {
+  position: relative;
+  max-width: 120px; /* Kenglik o'zgarmaydi */
+  cursor: pointer;
+  z-index: 1;
+}
+
+.desc-wrapper {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  transition: 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Kengaygan holati (Absolute positioning jadvalni buzmasligi uchun) */
+.desc-cell.expanded {
+    z-index: 999;
+}
+
+.desc-cell.expanded .desc-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 280px; /* Kenglik matn uchun */
+  max-height: 150px;
+  background: #0f172a;
+  border: 1px solid var(--neon-blue);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  padding: 15px;
+  border-radius: 12px;
+  white-space: normal;
+  overflow-y: auto;
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+/* Narx va Count uchun chiroyli ko'rinish */
+.price-tag {
+    color: #10b981 !important;
+    font-weight: bold;
+}
+
+/* Input Grid 3 ustunli */
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

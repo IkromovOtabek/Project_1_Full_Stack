@@ -1,0 +1,112 @@
+:root {
+  --neon-blue: #00f2fe;
+  --neon-purple: #a855f7;
+  --bg-dark: #020617;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: white;
+  overflow-x: hidden;
+}
+
+.home-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at top right, #111827, #020617);
+}
+
+/* Glassmorphism Navigation */
+.navigation-menu {
+  margin-top: 30px;
+  padding: 10px 40px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.nav-link {
+  color: #cbd5e1 !important;
+  font-weight: 500;
+  margin: 0 15px;
+  transition: 0.3s;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--neon-blue) !important;
+  text-shadow: 0 0 10px var(--neon-blue);
+  transform: translateY(-2px);
+}
+
+.login-btn {
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  padding: 8px 25px !important;
+  border-radius: 20px;
+  color: white !important;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Sphere Styling */
+.sphere-animation {
+  margin-top: 90px;
+  width: 500px;
+  height: 500px;
+  filter: drop-shadow(0 0 25px var(--neon-blue));
+}
+
+.sphere path {
+  fill: none;
+  stroke: url(#sphereGradient);
+  stroke-width: 1.2px;
+}
+
+/* User Badge */
+.user-badge {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 30px;
+  padding: 5px 15px;
+  margin: 0 15px;
+}
+
+.nav-user-name {
+  color: var(--neon-purple);
+  font-family: 'Orbitron';
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* Background Blobs */
+.shape-blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: 0;
+  border-radius: 50%;
+}
+.one { top: -10%; left: -5%; background: var(--neon-purple); }
+.two { bottom: -10%; right: -5%; background: var(--neon-blue); }

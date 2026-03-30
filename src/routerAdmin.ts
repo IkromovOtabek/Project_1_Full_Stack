@@ -12,7 +12,11 @@ routerAdmin
 
 routerAdmin
   .get("/signup", adminController.getSignup)
-  .post("/signup", makeUploader("users").single("userImage"),adminController.processSignup); // Middleware hisoblanadi, adminController.processSignup);
+  .post(
+    "/signup",
+    makeUploader("users").single("userImage"),
+    adminController.processSignup,
+  ); // Middleware hisoblanadi, adminController.processSignup);
 routerAdmin.get("/logout", adminController.logout);
 
 routerAdmin.get("/check-me", adminController.checkAuthSesson);
@@ -36,5 +40,16 @@ routerAdmin.post(
 );
 
 /** USER **/
+
+routerAdmin.get(
+  "/user/all",
+//   adminController.verifyRestaurant,
+  adminController.getUsers,
+);
+routerAdmin.post(
+  "/user/edit",
+//   adminController.verifyRestaurant,
+  adminController.updateChosenUser,
+);
 
 export default routerAdmin;

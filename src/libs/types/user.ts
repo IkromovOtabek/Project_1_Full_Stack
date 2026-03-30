@@ -36,6 +36,17 @@ export interface LoginInput {
   userPassword: string;
 }
 
+export interface UserUpdateInput{
+    _id: ObjectId;
+    userStatus?: UserStatus;
+    userNick?: string;
+    userPhone?: string;
+    userPassword?: string;
+    userAddress?: string;
+    userDesc?: string;
+    userImage?: string;
+} 
+
 export interface AdminRequest extends Request{
     user: User;
     session: Session & { user: User }; // sessiyada member ma'lumotlari mavjud

@@ -97,6 +97,32 @@ adminController.logout = async (req: AdminRequest, res: Response) => {
   }
 };
 
+adminController.getUsers = async (req: Request, res: Response) => {
+   try {
+       console.log("getUsers");
+       const result = await userService.getUsers();
+       console.log("result:", result);
+       
+       res.render("users", {users: result}); // users.ejs faylini render qilish 
+   } catch(err) {
+    console.log("Error, getUsers:", err);
+    res.redirect('/admin/login');
+   }
+};
+
+adminController.updateChosenUser = async (req: Request, res: Response) => {
+   try {
+       console.log("updateChosenUser");
+       const result = await userService.updateChosenUser(req.body);
+
+       res.status(HttpCode.OK).json({ data: result });
+   } catch(err) {
+    console.log("Error, updateChosenUser:", err);
+        if(err instanceof Errors) res.status(err.code).json(err);
+        else res.status(Errors.stadanrd.code).json(Errors.stadanrd);
+   }
+};
+
 adminController.checkAuthSesson = async (req: AdminRequest, res: Response) => {
   try {
     console.log("checkAuthSesson");

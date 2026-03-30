@@ -1,8 +1,9 @@
 import UserModel from "../schema/User.model";
-import { LoginInput, User, UserInput } from "../libs/types/user";
+import { LoginInput, User, UserInput, UserUpdateInput } from "../libs/types/user";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { UserType } from "../libs/enums/user.enum";
 import * as bcrypt from "bcryptjs";
+import { shapeIntoMongooseObjectId } from "../libs/types/config";
 
 class UserService {
   private readonly userModel;
@@ -55,11 +56,11 @@ class UserService {
     const salt = await bcrypt.genSalt();
     input.userPassword = await bcrypt.hash(input.userPassword, salt);
     console.log("after:", input.userPassword);
-
     try {
       const result = await this.userModel.create(input);
       return result;
     } catch (err) {
+      console.log(err);
       throw new Errors(HttpCode.BAD_REQUEST, Message.CREATED_FAILED);
     }
   }
@@ -81,6 +82,31 @@ class UserService {
 
     return await this.userModel.findById(user._id).exec(); //Muvaffaqaiyatli login bolgan Adminga web site ochilishini oladi
   }
+
+  public async getUsers(): Promise<User[]> {
+    const result = await this.userModel
+      .find({ memberType: UserType.USER })
+      .exec();
+
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
+  }
+
+  public async updateChosenUser(input: UserUpdateInput): Promise<User> {
+    input._id = shapeIntoMongooseObjectId(input._id); // ObjectId ga aylantirish shapeIntoMongooseObjectId nima qiladi - bu funksiya inputdagi _id ni mongoose ObjectId ga aylantiradi
+    const result = await this.userModel
+      .findByIdAndUpdate({ _id: input._id }, input, {
+        new: true,
+        runValidators: true,
+      })
+      .exec(); //input ni yangilaydi va yangi holatini qaytaradi
+
+    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+    return result;
+  }
+
 }
 
 export default UserService;

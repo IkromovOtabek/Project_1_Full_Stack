@@ -4,7 +4,7 @@ import {
   ProductCondission,
   ProductStatus,
 } from "../libs/enums/product.enum";
-// memberschemani 2 xil usulda qursa buladi 1-Schema first va Code first orqali quriladi bu qurganimiz schama based
+
 const productSchema = new Schema(
   {
     productStatus: {
@@ -34,11 +34,18 @@ const productSchema = new Schema(
       type: Number,
       required: true,
     },
+    // YANGI QO'SHILGAN MAYDONLAR:
+    productmemory: {
+      type: String, // Masalan: "128GB", "256GB"
+    },
+    productSize: {
+      type: String, // Agar kiyim yoki boshqa narsa bo'lsa: "S", "M", "L"
+    },
     productDesc: {
       type: String,
     },
     productImages: {
-      type: [String], // Rasm URL-larini saqlash uchun massiv
+      type: [String],
       default: [],
     },
     productViews: {
@@ -46,11 +53,14 @@ const productSchema = new Schema(
       default: 0,
     },
   },
-  { timestamps: true }, // updatedAt, createdAt bu bizda updatedAt va createdAt qachon hosil bulganini quyib beradi
+  { timestamps: true }
 );
+
+// Diqqat: index qismidagi unique: true faqat mahsulot nomi uchun bo'lishi tavsiya etiladi.
+// Rasm massivi va Tavsif bo'yicha unique qilish xatolik berishi mumkin.
 productSchema.index(
-  { productImages: 1, productDesc: 1 },
-  { unique: true },
+  { productName: 1, productPrice: 1 }, 
+  { unique: true }
 );
 
 export default mongoose.model("Product", productSchema);
