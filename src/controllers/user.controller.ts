@@ -13,7 +13,7 @@ userController.signup = async (req: Request, res: Response) => {
     console.log("getSignup");
     const input: UserInput = req.body,
       result: User = await userService.signup(input);
-      //TODO: Tokens
+    (req.session as any).user = result;
 
     res.json({ user: result });
   } catch (err) {
@@ -28,7 +28,7 @@ userController.login = async (req: Request, res: Response) => {
     console.log("login");
     const input: LoginInput = req.body,
       result = await userService.login(input);
-      //TODO: Tokens
+    (req.session as any).user = result;
 
     res.json({ user: result });
   } catch (err) {
