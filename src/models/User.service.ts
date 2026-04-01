@@ -43,6 +43,26 @@ class UserService {
     return await this.userModel.findById(user._id).lean().exec(); //Muvaffaqaiyatli login bolgan Adminga web site ochilishini oladi
   }
 
+  public async getTopUsers(limit: number = 5): Promise<User[]> {
+    const result = (await this.userModel
+      .find({ userType: UserType.USER })
+      .sort({ userPoints: -1, createdAt: -1 })
+      .limit(Math.min(50, Math.max(1, limit)))
+      .lean()
+      .exec()) as User[];
+
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+    return result;
+  }
+
+  public async getStoreContact(): Promise<User | null> {
+    const admin = (await this.userModel
+      .findOne({ userType: UserType.ADMIN })
+      .lean()
+      .exec()) as User | null;
+    return admin;
+  }
+
   /** SSR **/
 
   public async processSignup(input: UserInput): Promise<User> {
@@ -85,7 +105,7 @@ class UserService {
 
   public async getUsers(): Promise<User[]> {
     const result = await this.userModel
-      .find({ memberType: UserType.USER })
+      .find({ userType: UserType.USER })
       .exec();
 
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);

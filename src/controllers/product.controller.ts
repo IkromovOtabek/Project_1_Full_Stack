@@ -9,6 +9,35 @@ const productService = new ProductService();
 const productController: T = {};
 
 /** SPA **/
+productController.getProducts = async (req: Request, res: Response) => {
+  try {
+    const { order, page, limit, productCollection, search } = req.query as T;
+    const data = await productService.getProducts({
+      order: String(order ?? "createdAt"),
+      page: Number(page ?? 1),
+      limit: Number(limit ?? 10),
+      productCollection: productCollection as any,
+      search: typeof search === "string" ? search : undefined,
+    });
+    res.json(data);
+  } catch (err) {
+    console.log("Error getProducts", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.stadanrd.code).json(Errors.stadanrd);
+  }
+};
+
+productController.getProduct = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id as string;
+    const data = await productService.getProductById(id);
+    res.json(data);
+  } catch (err) {
+    console.log("Error getProduct", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.stadanrd.code).json(Errors.stadanrd);
+  }
+};
 
 /** SSR **/
 

@@ -1,0 +1,12 @@
+<svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Orqa fon (Hexagon) -->
+  <path 
+    d="M50 5L90 27.5V72.5L50 95L10 72.5V27.5L50 5Z" 
+    fill="#3b82f6"
+  />
+  <!-- Markazdagi Chaqmoq (Oq rangda) -->
+  <path 
+    d="M55 30L38 52H50L45 70L62 48H50L55 30Z" 
+    fill="white" 
+  />
+</svg>

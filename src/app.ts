@@ -4,6 +4,7 @@ import router from "./router";
 import routerAdmin from "./routerAdmin";
 import morgan from 'morgan';
 import { MORGAN_FORMAT } from "./libs/types/config";
+import cors from "cors";
 
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
@@ -17,7 +18,14 @@ const store = new MongoDBStore({
 
 /** 1-ENTRANCE **/
 const app = express();
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  }),
+);
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan(MORGAN_FORMAT));
