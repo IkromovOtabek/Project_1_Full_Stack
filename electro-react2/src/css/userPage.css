@@ -1,0 +1,155 @@
+
+.user-page-main {
+    background: radial-gradient(circle at center, #111827 0%, #020617 100%);
+    min-height: 100vh;
+    padding-top: 120px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Sahifa sarlavhasi */
+.page-header-text {
+    font-weight: 900 !important;
+    color: #fff;
+    margin-bottom: 40px !important;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border-radius: 32px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* O'ng tomon qotib turishi uchun qo'shimcha */
+.sticky-sidebar {
+    height: fit-content; /* Balandlikni o'ziga moslash shart */
+}
+
+/* MUI Input stillari */
+.dark-input .MuiOutlinedInput-root {
+    color: #fff;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.dark-input .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-input .MuiInputLabel-root {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.dark-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+.dark-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #3b82f6 !important;
+}
+
+/* Tugma */
+.gradient-save-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    color: white !important;
+    border-radius: 14px !important;
+    padding: 12px 45px !important;
+    font-weight: 800 !important;
+    text-transform: none !important;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Profil Prevyu qismi */
+.profile-top-section {
+    text-align: center;
+}
+
+.avatar-frame {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.avatar-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 40px;
+    object-fit: cover;
+    border: 3px solid #3b82f6;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.type-badge {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    background: #111827;
+    padding: 8px;
+    border-radius: 50%;
+    border: 2px solid #3b82f6;
+    display: flex;
+}
+
+.user-nick-text {
+    font-weight: 800 !important;
+    color: #fff;
+    margin-top: 10px !important;
+}
+
+.user-type-label {
+    color: #3b82f6;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.social-icon-btn {
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 28px !important;
+}
+
+.social-icon-btn:hover {
+    color: #3b82f6;
+    transform: translateY(-4px);
+}
+
+.bio-text {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.8;
+    text-align: center;
+    font-style: italic;
+}
+
+.address-info-box {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-label {
+    color: #3b82f6;
+    font-weight: 900;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+}
+
+.info-value {
+    color: #e5e7eb;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .user-page-main { padding-top: 100px; }
+    .glass-card { padding: 25px; }
+}

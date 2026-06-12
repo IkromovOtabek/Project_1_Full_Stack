@@ -1,0 +1,837 @@
+.homepage {
+  width: 100%;
+  height: auto;
+}
+
+/* STATISTICS */
+.homepage .static-frame {
+  width: 100%;
+  height: 236px;
+  background: #343434;
+}
+.homepage .static-frame .info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homepage .static-frame .info .static-box {
+  margin-top: 50px;
+  width: 200px;
+  height: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .static-frame .info .static-box .static-num {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 80px;
+  color: #d7b686;
+}
+.homepage .static-frame .info .static-box .static-text {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  color: #d7b686;
+}
+
+/* POPULAR DISHES */
+.homepage .popular-dishes-frame {
+  width: 100%;
+  height: 580px;
+  display: flex;
+  background: #f8f8ff;
+}
+.homepage .popular-dishes-frame .popular-section {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homepage .popular-dishes-frame .popular-section .category-title {
+  text-align: center;
+  font-family: "Roboto Serif";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  color: #000;
+}
+.homepage .popular-dishes-frame .popular-section .cards-frame {
+  width: 100%;
+  margin-top: 43px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.homepage .popular-dishes-frame .popular-section .cards-frame {
+  width: 100%;
+  margin-top: 43px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.homepage .popular-dishes-frame .popular-section .cards-frame .card {
+  min-height: 430px;
+  width: calc((100% - 30px) / 4);
+  min-width: calc((100% - 30px) / 4);
+  cursor: pointer;
+}
+
+.homepage
+  .popular-dishes-frame
+  .popular-section
+  .cards-frame
+  .card
+  .card-cover {
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 200px),
+    linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
+}
+
+.homepage .popular-dishes-frame .popular-section .cards-frame .card .title {
+  width: 85px; /* oldingi 65px ga nisbatan +20px */
+}
+.homepage .popular-dishes-frame .no-data {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  color: #e3c08d;
+}
+
+/* NEW PRODUCTS */
+
+.homepage .new-products-frame {
+  width: 100%;
+  height: 605px;
+  background: #f8f8ff;
+  display: flex;
+}
+.homepage .main {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homepage .new-products-frame .category-title {
+  font-family: "Dancing Script";
+  font-size: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+}
+.homepage .new-products-frame .main .cards-frame {
+  width: 100%;
+  margin: 47px 2px 2px 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.homepage .new-products-frame .main .card {
+  height: 335px;
+  width: calc((100% - 30px) / 4);
+  min-width: calc((100% - 30px) / 4);
+  cursor: pointer;
+}
+.homepage .new-products-frame .product-sale {
+  position: absolute;
+  margin-top: 10px;
+  z-index: 100;
+  width: 90px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff9200;
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.1);
+  border: 25px;
+  border-radius: 25px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 21px;
+  color: #f8f8ff;
+}
+.homepage .new-products-frame .product-detail {
+  width: auto;
+  height: 49%;
+  display: flex;
+  justify-content: center;
+  margin-top: -12px;
+  border-top: 1px solid;
+  border-color: #f8f8ff;
+  background-color: #fafbfb;
+}
+.homepage .new-products-frame .product-detail .info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.homepage .new-products-frame .product-detail .title {
+  width: 65px;
+  font-weight: 500;
+}
+.homepage.new-products-frame .product-detail .price {
+  margin-left: 10px;
+  width: 20px;
+  font-weight: 500;
+}
+.homepage.new-products-frame .product-detail .divider {
+  margin: 0 10px 0 10px;
+  width: 2px;
+  background-color: #d9d9d9;
+}
+.homepage.new-products-frame .product-detail .views {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.homepage .new-products-frame .no-data {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  color: #e3c08d;
+}
+/* ADERTISEMENT */
+.homepage .ads-restaurant-frame {
+  width: 100%;
+  height: 693px;
+  display: flex;
+  overflow: hidden;
+  transform: perspective(0px);
+  box-shadow: -3px 0px 20px 14px #34334380;
+}
+.homepage .ads-restaurant-frame .ads-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.06);
+  overflow: hidden;
+  animation: adsKenBurns 10s ease-in-out infinite;
+}
+
+@keyframes adsKenBurns {
+  0% {
+    transform: scale(1.06) translate3d(0, 0, 0);
+    filter: saturate(1.02) contrast(1.02);
+  }
+  50% {
+    transform: scale(1.12) translate3d(-1.5%, 1%, 0);
+    filter: saturate(1.08) contrast(1.05);
+  }
+  100% {
+    transform: scale(1.06) translate3d(0, 0, 0);
+    filter: saturate(1.02) contrast(1.02);
+  }
+}
+/* ACTIVE USERS */
+.homepage .active-users-frame {
+  width: 100%;
+  height: 605px;
+  background: #f8f8ff;
+  display: flex;
+}
+.homepage .active-users-frame .main{
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homepage .cards-frame{
+  width: 100%;
+  margin: 47px 2px 2px 2px;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.homepage .cards-frame .card{
+  height: 305px;
+  width: calc((100% - 30px) / 4);
+  min-width: calc((100% - 30px) / 4);
+  cursor: pointer;
+}
+
+.homepage .active-users .cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.homepage .active-users-frame .user-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: #f8fafc;
+  padding: 8px;
+}
+.homepage .cards-frame .member-nickname{
+  display: flex;
+  justify-content: center;   /* gorizontal */
+  align-items: center;       /* vertikal */
+  text-align: center;
+  width: 100%;
+}
+.homepage .active-users-frame .main .category-title{
+  text-align: center;
+  font-family: "Roboto Serif";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  color: #000;
+}
+.homepage .active-users-frame .no-data {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  color: #e3c08d;
+}
+
+/** EVENTS **/
+
+.homepage .events-frame {
+  width: 100%;
+  height: 745px;
+  background: #f8f8ff;
+  display: flex;
+}
+
+.homepage .events-frame .category-title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  padding-top: 20px;
+}
+
+.homepage .events-frame .events-main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage .events-frame .events-main .events-text {
+  width: auto;
+  height: 70px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage .events-frame .events-main .prev-next-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  margin: 40px 0 40px 0;
+  height: 25px;
+}
+
+.homepage .events-frame .dot-frame-pagination {
+  position: relative;
+  width: auto;
+  display: flex;
+}
+
+.homepage .events-frame .events-main .events-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homepage .events-frame .events-info .events-info-frame {
+  position: relative;
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .events-frame .events-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.homepage .events-frame .events-desc {
+  position: absolute;
+  margin-bottom: 7px;
+  padding: 10px;
+  display: flex;
+  width: 90%;
+  height: auto;
+  bottom: 5px;
+  background: #f8f8ff;
+  box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+  border-radius: 8px;
+}
+
+.homepage .events-frame .events-desc .events-bott {
+  width: 97%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .events-frame .events-desc .events-bott .bott-left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage .events-frame .bott-left .event-title-speaker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homepage .events-frame .event-title-speaker .event-organizator {
+  display: flex;
+  align-items: center;
+}
+
+.homepage .events-frame .event-title-speaker .event-organizator img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.homepage .events-frame .event-organizator .spec-text-author {
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  line-height: 34px;
+  color: #140342;
+}
+
+.homepage .events-frame .bott-left .text-desc {
+  margin-top: 10px;
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #4f547b;
+}
+
+.homepage .events-frame .bott-left .bott-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 100%;
+  height: 16px;
+}
+
+.homepage .events-frame .bott-info .bott-info-main {
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: auto;
+  height: 100%;
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4f547b;
+}
+
+.homepage .events-frame .bott-info .bott-info-main img {
+  margin-right: 10px;
+}
+
+.homepage .events-frame .swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.homepage .events-frame .swiper-pagination-bullet {
+  margin-right: 5px;
+  width: 8px;
+  height: 8px;
+  text-align: center;
+  opacity: 1;
+  background: #f8f8ff;
+  border-radius: 50%;
+}
+
+.homepage .events-frame .swiper-pagination-bullet-active {
+  background: #343434;
+  border-radius: 50%;
+}
+
+/* ---------------------------------------------------- */
+/* HOME THEMES (quick switch via class on .homepage)   */
+/* default now: .homepage.style-ecommerce              */
+/* available: .style-minimal, .style-dark              */
+/* ---------------------------------------------------- */
+
+.homepage.style-ecommerce {
+  --home-bg: #eef4ff;
+  --section-bg: #ffffff;
+  --title-color: #0f172a;
+  --card-radius: 18px;
+  --card-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+  --card-shadow-hover: 0 18px 45px rgba(37, 99, 235, 0.24);
+  --accent: #1d4ed8;
+  --accent-2: #7c3aed;
+  --text-muted: #475569;
+}
+
+.homepage.style-ecommerce {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.12), transparent 32%),
+    radial-gradient(circle at 80% 12%, rgba(124, 58, 237, 0.14), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #ecf3ff 40%, #eef4ff 100%);
+}
+
+.homepage.style-ecommerce .popular-dishes-frame,
+.homepage.style-ecommerce .new-products-frame,
+.homepage.style-ecommerce .active-users-frame,
+.homepage.style-ecommerce .static-frame,
+.homepage.style-ecommerce .events-frame {
+  background: transparent;
+}
+
+.homepage.style-ecommerce .category-title {
+  color: var(--title-color);
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+}
+
+.homepage.style-ecommerce .static-frame {
+  border-radius: 0 0 28px 28px;
+  background: linear-gradient(120deg, #0f172a 0%, #1e3a8a 60%, #4f46e5 100%);
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.25);
+}
+
+.homepage.style-ecommerce .static-frame .static-box {
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(4px);
+}
+
+.homepage.style-ecommerce .popular-dishes-frame .popular-section .cards-frame .card,
+.homepage.style-ecommerce .new-products-frame .main .card,
+.homepage.style-ecommerce .active-users-frame .cards-frame .card {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  border: 1px solid rgba(29, 78, 216, 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.homepage.style-ecommerce .popular-dishes-frame .popular-section .cards-frame .card:hover,
+.homepage.style-ecommerce .new-products-frame .main .card:hover,
+.homepage.style-ecommerce .active-users-frame .cards-frame .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.homepage.style-ecommerce .new-products-frame .product-sale {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  width: auto;
+  min-width: 108px;
+  padding: 0 14px;
+  height: 32px;
+  font-size: 11px;
+  border-radius: 999px;
+}
+
+.homepage.style-ecommerce .popular-dishes-frame .popular-section .cards-frame {
+  margin-top: 30px;
+}
+
+.homepage.style-ecommerce .new-products-frame .main .cards-frame {
+  margin-top: 30px;
+}
+
+.homepage.style-ecommerce .active-users-frame .cards-frame {
+  margin-top: 30px;
+}
+
+.homepage.style-ecommerce .events-frame .events-desc {
+  border-radius: 14px;
+  border: 1px solid rgba(29, 78, 216, 0.14);
+  box-shadow: var(--card-shadow);
+}
+
+.homepage.style-ios .ads-restaurant-frame .ads-image,
+.homepage.style-ecommerce .ads-restaurant-frame .ads-image {
+  border-radius: 28px;
+}
+
+.homepage.style-ecommerce .member-nickname,
+.homepage.style-ecommerce .user-phone {
+  color: var(--title-color);
+}
+
+.homepage.style-ecommerce .user-phone {
+  opacity: 0.75;
+}
+
+/* ---------- Alternative 1: Minimal ---------- */
+.homepage.style-minimal {
+  --home-bg: #fafafa;
+  --title-color: #111111;
+  --accent: #111111;
+}
+
+.homepage.style-minimal .popular-dishes-frame,
+.homepage.style-minimal .new-products-frame,
+.homepage.style-minimal .active-users,
+.homepage.style-minimal .events-frame {
+  background: var(--home-bg);
+}
+
+.homepage.style-minimal .category-title {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+.homepage.style-minimal .popular-dishes-frame .popular-section .cards-frame .card,
+.homepage.style-minimal .new-products-frame .main .card,
+.homepage.style-minimal .active-users .cards .card {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: none;
+}
+
+/* ---------- Alternative 2: Dark ---------- */
+.homepage.style-dark {
+  --home-bg: #0f172a;
+  --title-color: #f8fafc;
+  --muted: #94a3b8;
+}
+
+.homepage.style-dark .popular-dishes-frame,
+.homepage.style-dark .new-products-frame,
+.homepage.style-dark .active-users,
+.homepage.style-dark .events-frame {
+  background: var(--home-bg);
+}
+
+.homepage.style-dark .category-title,
+.homepage.style-dark .main-title,
+.homepage.style-dark .wel-txt,
+.homepage.style-dark .service-txt {
+  color: var(--title-color);
+}
+
+.homepage.style-dark .popular-dishes-frame .popular-section .cards-frame .card,
+.homepage.style-dark .new-products-frame .main .card,
+.homepage.style-dark .active-users .cards .card {
+  border-radius: 14px;
+  background: #111827;
+  border: 1px solid #1f2937;
+  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.45);
+  border-radius: solid 1px red;
+}
+
+.homepage.style-dark .new-products-frame .product-detail,
+.homepage.style-dark .events-frame .events-desc {
+  background: #111827;
+  color: var(--title-color);
+  border-color: #1f2937;
+}
+
+/* ---------- iOS-inspired (default) ---------- */
+@keyframes iosFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes iosGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.homepage.style-ios {
+  --ios-bg-1: #eaf2ff;
+  --ios-bg-2: #f4f8ff;
+  --ios-bg-3: #eef5ff;
+  --ios-title: #0b1220;
+  --ios-muted: #5b6472;
+  --ios-card: rgba(255, 255, 255, 0.72);
+  --ios-border: rgba(148, 163, 184, 0.24);
+  --ios-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
+  --ios-shadow-hover: 0 22px 48px rgba(30, 64, 175, 0.22);
+  --ios-accent: #2563eb;
+}
+
+.homepage.style-ios {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(59, 130, 246, 0.18), transparent 35%),
+    radial-gradient(circle at 84% 12%, rgba(125, 211, 252, 0.18), transparent 34%),
+    linear-gradient(160deg, var(--ios-bg-1), var(--ios-bg-2), var(--ios-bg-3));
+}
+
+.homepage.style-ios .popular-dishes-frame,
+.homepage.style-ios .new-products-frame,
+.homepage.style-ios .active-users-frame,
+.homepage.style-ios .events-frame {
+  background: transparent;
+}
+
+.homepage.style-ios .category-title {
+  color: var(--ios-title);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  animation: iosFadeUp 0.6s ease both;
+}
+
+.homepage.style-ios .static-frame {
+  border-radius: 0 0 30px 30px;
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 60%, #38bdf8 100%);
+  background-size: 200% 200%;
+  animation: iosGradientShift 10s ease infinite;
+}
+
+.homepage.style-ios .static-frame .static-box {
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.homepage.style-ios .popular-dishes-frame .popular-section .cards-frame .card,
+.homepage.style-ios .new-products-frame .main .card,
+.homepage.style-ios .active-users-frame .cards-frame .card,
+.homepage.style-ios .events-frame .events-desc {
+  background: var(--ios-card);
+  border: 1px solid var(--ios-border);
+  box-shadow: var(--ios-shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  overflow: hidden;
+  animation: iosFadeUp 0.65s ease both;
+}
+
+.homepage.style-ios .popular-dishes-frame .popular-section .cards-frame .card:nth-child(1),
+.homepage.style-ios .new-products-frame .main .card:nth-child(1),
+.homepage.style-ios .active-users-frame .cards-frame .card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.homepage.style-ios .popular-dishes-frame .popular-section .cards-frame .card:nth-child(2),
+.homepage.style-ios .new-products-frame .main .card:nth-child(2),
+.homepage.style-ios .active-users-frame .cards-frame .card:nth-child(2) {
+  animation-delay: 0.11s;
+}
+
+.homepage.style-ios .popular-dishes-frame .popular-section .cards-frame .card:nth-child(3),
+.homepage.style-ios .new-products-frame .main .card:nth-child(3),
+.homepage.style-ios .active-users-frame .cards-frame .card:nth-child(3) {
+  animation-delay: 0.17s;
+}
+
+.homepage.style-ios .popular-dishes-frame .popular-section .cards-frame .card:nth-child(4),
+.homepage.style-ios .new-products-frame .main .card:nth-child(4),
+.homepage.style-ios .active-users-frame .cards-frame .card:nth-child(4) {
+  animation-delay: 0.23s;
+}
+
+.homepage.style-ios .popular-dishes-frame .popular-section .cards-frame .card:hover,
+.homepage.style-ios .new-products-frame .main .card:hover,
+.homepage.style-ios .active-users-frame .cards-frame .card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--ios-shadow-hover);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.homepage.style-ios .new-products-frame .product-sale {
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
+  border-radius: 999px;
+  padding: 0 14px;
+  min-width: 108px;
+}
+
+.homepage.style-ios .active-users-frame .user-card-image {
+  background: linear-gradient(180deg, #f8fbff, #eef4ff);
+  object-fit: contain;
+  padding: 10px;
+}
+
+.homepage.style-ios .events-frame .events-desc .text-desc,
+.homepage.style-ios .events-frame .events-desc .spec-text-author,
+.homepage.style-ios .events-frame .events-desc .bott-info-main {
+  color: var(--ios-muted);
+}

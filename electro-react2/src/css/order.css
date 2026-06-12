@@ -1,0 +1,430 @@
+/* ========== Orders Page — asosiy layout ========== */
+.order-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 24px 0;
+}
+
+.order-container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 900px) {
+  .order-container {
+    flex-wrap: nowrap;
+  }
+}
+
+.order-left {
+  flex: 1 1 55%;
+  min-width: 0;
+}
+
+.order-right {
+  flex: 0 0 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 899px) {
+  .order-right {
+    flex: 1 1 100%;
+  }
+}
+
+/* ========== Tabs ========== */
+.order-nav-frame {
+  margin-bottom: 16px;
+}
+
+.order-nav-frame .MuiTabs-root {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.order-nav-frame .MuiTab-root {
+  text-transform: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: rgb(215, 181, 134);
+  min-height: 48px;
+}
+
+.order-nav-frame .MuiTab-root.Mui-selected {
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.order-nav-frame .MuiTabs-indicator {
+  background-color: #2c2c2c;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+}
+
+.order-main-content {
+  margin-top: 8px;
+  gap: 16px;
+}
+
+/* ========== Order kartochkalari (chap ustun) ========== */
+.order-main-box {
+  background: #ffffff;
+  border-radius: 16px;
+  /* box-shadow: 
+    8px 9px 3px 1px rgba(0, 0, 0, 0.301),
+    inset 0px 0px 8px 9px rgb(217 217 235); */
+  box-shadow: 15px 14px 4px #00000040, inset -1px 0 16px 13px #18177033;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.order-main-box:last-child {
+  margin-bottom: 0;
+}
+
+.order-box-scroll {
+  margin-bottom: 16px;
+}
+
+.orders-name-price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.orders-name-price:last-child {
+  border-bottom: none;
+}
+
+.order-dish-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.little-dish {
+  flex: 1;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c2c2c;
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.price-box p {
+  margin: 0;
+}
+
+.price-box img {
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+}
+
+/* ========== Buyurtma jami va tugmalar ========== */
+.total-price-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.box-total {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.box-total p {
+  margin: 0;
+}
+
+.box-total img {
+  margin-left: 8px;
+  width: 14px;
+  height: 14px;
+}
+
+.order-summary-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 12px 0 0 0;
+  flex-wrap: wrap;
+}
+
+.order-summary-text-line {
+  font-size: 18px;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.order-summary-line-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-time {
+  font-size: 0.75rem;
+  color: #888;
+  font-size: 18px;
+  margin-left: 110px;
+}
+
+/* CANCEL — kulrang/jigarrang */
+.cancel-button {
+  background-color: #d7b586 !important;
+  color: #3e2723 !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: none !important;
+}
+
+.cancel-button:hover {
+  background-color: #a1887f !important;
+}
+
+/* PAYMENT — yashil */
+.pay-button {
+  background-color: #56b74d !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 8px 20px;
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+.pay-button:hover {
+  background-color: #66bb6a !important;
+}
+
+/* VERIFY TO FULFIL — ko‘k */
+.verify-button {
+  background-color: #0288d1 !important;
+  color: #f8f8ff !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px #00000040, inset 0 4px 4px #00000040 !important;
+}
+
+.verify-button:hover {
+  background-color: #1565c0 !important;
+}
+
+/* ========== O‘ng ustun — User kartochkasi ========== */
+.order-info-box {
+  margin-top: 75px;
+  background: #ffffff;
+  border-radius: 16px;
+  /* box-shadow: 
+    8px 9px 3px 1px rgba(0, 0, 0, 0.301),
+    inset 0px 0px 8px 9px rgb(217 217 235); */
+  box-shadow: 15px 14px 4px #00000040, inset -1px 0 16px 13px #18177033;
+  padding: 24px;
+  text-align: center;
+}
+
+.member-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-user-img {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.order-user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.order-user-icon-box {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 24px;
+  height: 24px;
+}
+
+.order-user-prof-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.order-user-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  display: block;
+  margin-top: 4px;
+}
+
+.order-user-prof {
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-top: 2px;
+}
+
+.order-liner {
+  width: 100%;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 16px 0;
+}
+
+.order-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.order-location .MuiSvgIcon-root {
+  font-size: 1.1rem;
+  color: #757575;
+}
+
+/* ========== To‘lov kartochkasi ========== */
+.order-payment-box {
+  background: #ffffff;
+  border-radius: 16px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+  box-shadow: 
+    8px 9px 3px 1px rgba(0, 0, 0, 0.301),
+    inset 0px 0px 8px 9px rgb(217 217 235);
+  padding: 24px;
+}
+
+.order-payment-box .order-payment-card-number .MuiOutlinedInput-root {
+  border-radius: 8px;
+}
+
+.order-payment-box .order-payment-card-number .MuiOutlinedInput-input {
+  color: #555;
+}
+
+.order-payment-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.order-payment-row .MuiTextField-root {
+  flex: 1;
+}
+
+.order-payment-box .MuiTextField-root {
+  margin-bottom: 12px;
+}
+
+.order-payment-box .MuiTextField-root:last-of-type {
+  margin-bottom: 0;
+}
+
+.order-payment-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.order-payment-logos span {
+  font-size: 0.7rem;
+  color: #999;
+}
+
+/* ========== MUI Paper override — order kartochkalari ========== */
+.order-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  padding: 20px !important;
+}
+
+.order-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.order-item-row .MuiAvatar-root {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.order-item-name {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c2c2c;
+}
+
+.order-item-price {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.order-actions-single {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}

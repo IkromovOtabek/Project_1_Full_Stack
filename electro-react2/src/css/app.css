@@ -1,0 +1,45 @@
+/* SweetAlert Modern Customization */
+.swal2-popup {
+  background: rgba(17, 24, 39, 0.95) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 24px !important;
+  color: #fff !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.swal2-title {
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+.swal2-html-container {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.swal2-confirm {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  border-radius: 12px !important;
+  padding: 10px 30px !important;
+  font-weight: 700 !important;
+}
+
+.swal2-icon.swal2-success {
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
+}
+
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
+  background-color: #3b82f6 !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+  border: .25em solid rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Modal ichidagi Inputlar uchun qo'shimcha */
+.dark-input .MuiOutlinedInput-root {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Avvalgi kodlardagi gradient-save-btn stili bu yerda ham ishlaydi */

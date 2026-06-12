@@ -1,0 +1,92 @@
+<%- include('includes/header') %>
+
+<link rel="stylesheet" type="text/css" href="/css/signup.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js"></script>
+
+<body>
+  <div class="signup-page-wrapper">
+    <!-- Fon elementlari -->
+    <div class="blob-c">
+      <div class="shape-blob one"></div>
+      <div class="shape-blob two"></div>
+    </div>
+
+    <div class="signup-content">
+      <!-- Chap tomondagi 3D Sfera -->
+      <div class="scene-3d">
+        <div class="sphere-wrapper">
+          <svg class="sphere-svg" viewBox="0 0 440 440">
+            <defs>
+              <linearGradient id="signupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f2fe" />
+                <stop offset="100%" stop-color="#7000ff" />
+              </linearGradient>
+            </defs>
+            <g class="paths-group">
+                <!-- Sfera pathlari (Home page bilan bir xil) -->
+                <path d="M361.604 361.238c-24.407 24.408-51.119 37.27-59.662 28.727-8.542-8.543 4.319-35.255 28.726-59.663 24.408-24.407 51.12-37.269 59.663-28.726 8.542 8.543-4.319 35.255-28.727 59.662z"/>
+                <!-- ... Barcha 20 tacha pathlarni shu yerga qo'ying ... -->
+                <path d="M109.698 109.332c-24.408 24.407-51.12 37.268-59.663 28.726-8.542-8.543 4.319-35.255 28.727-59.662 24.407-24.408 51.12-37.27 59.662-28.727 8.543 8.543-4.319 35.255-28.726 59.663z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- O'ng tomondagi Glassmorphism Forma -->
+      <form onsubmit="return validateSignupForm()" action="/admin/signup" method="POST" enctype="multipart/form-data" class="glass-form-container">
+        <div class="signup-frame">
+          <div class="signup-top">
+            <h2 class="cyber-title">Ro'yxatdan o'tish</h2>
+            <div class="nav-links">
+              <span>Bosh sahifaga qaytish <a href="/admin" class="neon-link">Home</a></span>
+              <p>Profilingiz bormi? <a href="/admin/login" class="neon-link">Login</a></p>
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-box">
+              <label>Admin nomi *</label>
+              <input type="text" name="userNick" class="user-nick" placeholder="Username" value="" />
+            </div>
+            <div class="input-box">
+              <label>Telefon *</label>
+              <input type="text" name="userPhone" class="user-phone" placeholder="Phone" />
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-box">
+              <label>Parol *</label>
+              <input type="password" name="userPassword" class="user-password" placeholder="Password" />
+            </div>
+            <div class="input-box">
+              <label>Parolni takrorlang *</label>
+              <input type="password" name="confirmPassword" class="confirm-password" placeholder="Repeat password" value="" />
+            </div>
+          </div>
+
+          <div class="media-section">
+            <div class="image-preview">
+              <img id="preview-target" src="/img/default.jpeg" />
+            </div>
+            <div class="upload-controls">
+              <span class="media-label">Admin rasmi</span>
+              <div class="custom-file-upload">
+                <input type="file" id="input-file" name="userImage" class="user-image" hidden />
+                <label for="input-file" class="upload-btn">Rasm yuklash</label>
+                <span id="file-name-display">Fayl tanlanmagan</span>
+              </div>
+            </div>
+          </div>
+
+          <input name="userType" value="RESTAURANT" hidden />
+          <button class="cyber-button" type="submit">Ro'yxatdan o'tish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/js/signup.js"></script>
+</body>
+<%- include('includes/footer') %>
